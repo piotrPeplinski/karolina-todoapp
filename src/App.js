@@ -1,11 +1,11 @@
-import "./App.css";
 import TaskList from "./components/TaskList";
+import { taskData } from "./utils/mockTasks";
 
 function App() {
+
   return (
     <>
-      <TaskList text={"Todo tasks"} />
-      <TaskList text={"Finished tasks"} />
+      <TaskList tasksList={taskData} />
     </>
   );
 }
