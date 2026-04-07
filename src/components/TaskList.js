@@ -1,10 +1,10 @@
+import TaskCard from "./TaskCard";
+
 const TaskList = ({ tasksList }) => {
   return (
-    <div>
+    <div className="task-list">
       {tasksList.map((task) => (
-        //TODO
-        //<TaskItem task={task} />
-        <p>{task.title}</p>
+        <TaskCard task={task} />
       ))}
     </div>
   );
