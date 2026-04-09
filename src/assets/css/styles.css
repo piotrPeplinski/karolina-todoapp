@@ -1,13 +1,17 @@
-.task-card {
-  background-color: rgb(42, 42, 39);
-  border-radius: 5rem;
-  padding: 3rem;
-  font-size: 3rem;
-}
 
 .task-list {
-  margin: 5rem 0;
   display: flex;
-  justify-content: center;
-  gap: 8rem;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5rem auto;
+  max-width: 150rem;   
+}
+
+.task-card {
+  background-color: #111827;
+  border-radius: 1.8rem;
+  border: 1px solid #1f2937;
+  padding: 2rem;
+  font-size: 3rem;
+  width: 45rem;
 }
