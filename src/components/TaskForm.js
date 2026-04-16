@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TaskCardButton from "./TaskCardButton";
 
 
 const TaskForm = () => {
@@ -18,8 +19,10 @@ const TaskForm = () => {
         value={value}
         onChange={(event) => setValue(event.target.value)}
       /> */}
-      <label htmlFor="title">Title</label>
-      <input
+      <h1>ADD TASK</h1>
+      {/* -------TITLE------ */}
+      <label className="task-label" htmlFor="title">Title</label>
+      <input className="form-input common-style" placeholder="Task title"
         type="text"
         id="title"
         value={formData.title}
@@ -33,8 +36,9 @@ const TaskForm = () => {
           }))
         }
       />
-      <label htmlFor="desc">Description</label>
-      <textarea
+      {/* -------DESCRIPTION------ */}
+      <label className="task-label" htmlFor="desc">Description</label>
+      <textarea className="form-textarea common-style" placeholder="Task description"
         value={formData.desc}
         onChange={(event) =>
           setFormData((prev) => ({
@@ -43,7 +47,9 @@ const TaskForm = () => {
           }))
         }
       />
-      <select
+      {/* -------PRIORITY------ */}
+      <label className="task-label " htmlFor="priority">Priority</label>
+      <select className="form-select common-style"
         value={formData.priority}
         onChange={(event) =>
           setFormData((prev) => ({
@@ -59,9 +65,10 @@ const TaskForm = () => {
         <option value={2}>Medium</option>
         <option value={3}>High</option>
       </select>
-      <label htmlFor="complete">Complete until</label>
-      <input type="date" id="complete" />
-      
+      {/* -------DATE------ */}
+      <label className="task-label" htmlFor="complete">Complete until</label>
+      <input className="form-date common-style" type="date" id="complete" />
+      <TaskCardButton type="taskDetails">Add task</TaskCardButton>
     </form>
   );
 };
