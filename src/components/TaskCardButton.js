@@ -1,4 +1,4 @@
-const TaskCardButton = ({ type, children }) => {
+const TaskCardButton = ({ type, children, onClick }) => {
   return (
     <>
       {type === "complete" ? (
@@ -14,7 +14,7 @@ const TaskCardButton = ({ type, children }) => {
         </button>
       ) : null}
       {type === "taskDetails" ? (
-        <button className="btn btn-full">{children}</button>
+        <button className="btn btn-full" onClick={onClick}>{children}</button>
       ) : null}
     </>
   );
