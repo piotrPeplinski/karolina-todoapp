@@ -3,7 +3,7 @@ import TaskCardButton from "./TaskCardButton";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FiCalendar } from "react-icons/fi";
-import "../assets/css/taskform.css"
+import "../assets/css/taskform.css";
 
 const TaskForm = () => {
   const [formData, setFormData] = useState({
@@ -94,6 +94,7 @@ const TaskForm = () => {
         />
         <FiCalendar className="calendar-icon" />
       </div>
+
       <TaskCardButton type="taskDetails">Add task</TaskCardButton>
     </form>
   );
