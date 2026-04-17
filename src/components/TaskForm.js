@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { FiCalendar } from "react-icons/fi";
 import "../assets/css/taskform.css";
 
-const TaskForm = () => {
+const TaskForm = ({ setTaskData }) => {
   const [formData, setFormData] = useState({
     title: "",
     desc: "",
@@ -13,16 +13,22 @@ const TaskForm = () => {
     date: "",
   });
   const [date, setDate] = useState(null);
-  const [value, setValue] = useState(""); //example
 
+  const handleSubmit = (e) => {
+    e.preventDefault(); //blokowanie domyślnej operacji - dla formularza odswiezenie strony
+    setTaskData((prev) => [
+      ...prev,
+      {
+        title: formData.title,
+        desc: formData.desc,
+        priority: formData.priority,
+        created_date: new Date(),
+        complete_until_date: date,
+      },
+    ]);
+  };
   return (
     <form className="task-form">
-      {/* example */}
-      {/* <input
-        type="text"
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
-      /> */}
       <p className="task-form-title">ADD TASK</p>
       {/* -------TITLE------ */}
       <label className="task-label" htmlFor="title">
@@ -95,7 +101,9 @@ const TaskForm = () => {
         <FiCalendar className="calendar-icon" />
       </div>
 
-      <TaskCardButton type="taskDetails">Add task</TaskCardButton>
+      <TaskCardButton type="taskDetails" onClick={handleSubmit}>
+        Add task
+      </TaskCardButton>
     </form>
   );
 };
