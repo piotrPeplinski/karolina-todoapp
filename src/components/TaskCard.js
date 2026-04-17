@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { priorities } from "../utils/constants";
 import Modal from "./Modal";
+import TaskCardButton from "./TaskCardButton";
 
 const TaskCard = ({ task }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,9 +18,9 @@ const TaskCard = ({ task }) => {
       </p>
       <h3 className="task-title"> {task.title}</h3>
 
-      <button className="btn btn-full" onClick={handleClick}>
+      <TaskCardButton type={"taskDetails"} onClick={handleClick}>
         Task details
-      </button>
+      </TaskCardButton>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <h3 className="modal-title">Task details</h3>
         <p>Description: {task.desc || "No description"}</p>
@@ -28,12 +29,8 @@ const TaskCard = ({ task }) => {
         <p>Complete until: {task.complete_until_date.toLocaleDateString()}</p>
       </Modal>
       <div className="buttons">
-        <button className="btn btn-green">
-          <ion-icon name="trash-outline"></ion-icon> Complete
-        </button>
-        <button className="btn btn-red">
-          <ion-icon name="trash-outline"></ion-icon> Delete
-        </button>
+        <TaskCardButton type={"complete"}>Complete</TaskCardButton>
+        <TaskCardButton type={"delete"}>Complete</TaskCardButton>
       </div>
     </div>
   );
