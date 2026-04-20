@@ -4,17 +4,15 @@ import TaskForm from "./components/TaskForm";
 import { useState } from "react";
 
 function App() {
-  const [taskData, setTaskData] = useState([
-    
-  ]);
-
+  const [TaskData, setTaskData] = useState([]);
   return (
     <>
       <header>
         <h1>Task Manager</h1>
       </header>
-      <TaskForm setTaskData={setTaskData}/>
-      <TaskList tasksList={taskData} />
+
+      <TaskForm setTaskData={setTaskData} />
+      <TaskList tasksList={TaskData} />
     </>
   );
 }
