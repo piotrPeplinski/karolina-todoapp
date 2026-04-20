@@ -63,6 +63,7 @@
   position: relative;
   width: 100%;
   margin-bottom: 1.2rem;
+  cursor: pointer;
 }
 
 .react-datepicker-wrapper {
@@ -75,8 +76,7 @@
   top: 50%;
   transform: translateY(-50%);
   color: #94a3b8;
-  cursor: pointer;
-  pointer-events: auto;
+  pointer-events: none;
   transition: color 0.2s ease;
   font-size: 2.2rem;
 }
