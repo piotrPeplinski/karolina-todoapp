@@ -30,7 +30,7 @@ const TaskCard = ({ task }) => {
       </Modal>
       <div className="buttons">
         <TaskCardButton type={"complete"}>Complete</TaskCardButton>
-        <TaskCardButton type={"delete"}>Complete</TaskCardButton>
+        <TaskCardButton type={"delete"}>Delete</TaskCardButton>
       </div>
     </div>
   );

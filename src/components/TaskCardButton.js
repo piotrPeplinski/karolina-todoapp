@@ -3,7 +3,7 @@ const TaskCardButton = ({ type, children, onClick }) => {
     <>
       {type === "complete" ? (
         <button className="btn btn-green">
-          <ion-icon name="trash-outline"></ion-icon>
+          <ion-icon name="checkmark-outline"></ion-icon>
           {children}
         </button>
       ) : null}
