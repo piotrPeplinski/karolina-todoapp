@@ -20,15 +20,15 @@
 }
 
 .task-card-low {
-  border-left: 6px solid rgba(43, 88, 177, 0.961);
+  border-left: 6px solid #2b58b1f5;
 }
 
 .task-card-medium {
-  border-left: 6px solid rgba(132, 95, 16, 0.951);
+  border-left: 6px solid #845f10f3;
 }
 
 .task-card-high {
-  border-left: 6px solid rgba(170, 84, 224, 0.314);
+  border-left: 6px solid #aa54e050;
 }
 
 .task-card:hover {
@@ -40,7 +40,7 @@
   font-weight: 600;
   font-size: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.314);
+  border-bottom: 1px solid #80808050;
 }
 
 /* ---------------BUTTONS------------------- */
@@ -62,7 +62,7 @@
 }
 
 .btn-full:hover {
-  border: 1px solid rgb(209, 196, 196);
+  border: 1px solid #d1c4c4;
   transition: all 0.6s;
 }
 
@@ -74,22 +74,22 @@
 
 .btn-green {
   width: 18rem;
-  background-color: rgba(61, 131, 93, 0.67);
-  color: rgba(43, 205, 116, 0.67);
-  border: 1px solid rgba(43, 205, 116, 0.67);
+  background-color: #3d835dab;
+  color: #2bcd74ab;
+  border: 1px solid #2bcd74ab;
 }
 
 .btn-red {
   width: 18rem;
-  background-color: rgba(179, 65, 65, 0.537);
-  color: rgb(239, 31, 31);
-  border: 1px solid rgb(240, 43, 43);
+  background-color: #b3414189;
+  color: #ef1f1f;
+  border: 1px solid #f02b2b;
 }
 
 /* ---------------MODAL------------------- */
 
 .modal-overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #00000066;
   backdrop-filter: blur(4px);
   position: fixed;
   top: 0;
@@ -126,9 +126,11 @@
   right: 1rem;
   cursor: pointer;
 }
+
 .modal-title {
   align-self: center;
 }
+
 .modal-content {
   font-size: 2.5rem;
   gap: 2rem;
@@ -147,16 +149,16 @@
 }
 
 .priority-low {
-  background-color: rgba(59, 110, 214, 0.314);
-  color: rgba(104, 148, 237, 0.961);
+  background-color: #3b6ed650;
+  color: #6894edf5;
 }
 
 .priority-medium {
-  background-color: rgba(229, 167, 33, 0.314);
-  color: rgba(229, 181, 77, 0.951);
+  background-color: #e5a72150;
+  color: #e5b54df3;
 }
 
 .priority-high {
-  background-color: rgba(162, 45, 235, 0.314);
-  color: rgba(189, 116, 234, 0.979);
+  background-color: #a22deb50;
+  color: #bd74eafa;
 }

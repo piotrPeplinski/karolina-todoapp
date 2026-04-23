@@ -3,7 +3,7 @@ import { priorities } from "../utils/constants";
 import Modal from "./Modal";
 import TaskCardButton from "./TaskCardButton";
 
-const TaskCard = ({ task }) => {
+const TaskCard = ({ task, setTaskData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {

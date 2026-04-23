@@ -1,19 +1,23 @@
-import { taskData } from "./utils/mockTasks";
 import TaskList from "./components/TaskList";
+import { ToastContainer,Flip } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import "./assets/css/tasklist.css";
 import TaskForm from "./components/TaskForm";
 import { useState } from "react";
 
+
 function App() {
-  const [TaskData, setTaskData] = useState([]);
+  const [taskData, setTaskData] = useState([]);
+  console.log();
+
   return (
     <>
       <header>
         <h1>Task Manager</h1>
       </header>
-
       <TaskForm setTaskData={setTaskData} />
-      <TaskList tasksList={TaskData} />
+      <TaskList tasksList={taskData} setTaskData={setTaskData} />
+      <ToastContainer transition={Flip}/>
     </>
   );
 }
