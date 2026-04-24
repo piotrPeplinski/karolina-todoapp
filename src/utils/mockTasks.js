@@ -18,7 +18,7 @@ export const taskData = [
   {
     title: "Learn React",
     desc: "State and Context",
-    completed: false,
+    completed: true,
     priority: 3,
     created_date: new Date("2026-04-01"),
     complete_until_date: new Date("2026-05-15"),

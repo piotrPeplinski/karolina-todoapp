@@ -3,13 +3,25 @@ import { priorities } from "../utils/constants";
 import Modal from "./Modal";
 import TaskCardButton from "./TaskCardButton";
 
-const TaskCard = ({ task }) => {
+const TaskCard = ({ task, setTaskData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {
     setIsModalOpen(true);
   };
   const priorityClass = priorities[task.priority].toLowerCase();
+
+  const handleComplete = () => {
+    setTaskData(
+      (prevTasks) => //[{ title: "Hello" }],
+      prevTasks.map(taskItem =>
+        taskItem.created_date === task.created_date ? {
+          ...taskItem,
+          completed: true
+        } : taskItem
+      )
+    );
+  };
 
   return (
     <div className={`task-card task-card-${priorityClass}`}>
@@ -29,7 +41,9 @@ const TaskCard = ({ task }) => {
         <p>Complete until: {task.complete_until_date.toLocaleDateString()}</p>
       </Modal>
       <div className="buttons">
-        <TaskCardButton type={"complete"}>Complete</TaskCardButton>
+        <TaskCardButton type={"complete"} onClick={handleComplete}>
+          Complete
+        </TaskCardButton>
         <TaskCardButton type={"delete"}>Delete</TaskCardButton>
       </div>
     </div>
