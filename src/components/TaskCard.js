@@ -3,7 +3,7 @@ import { priorities } from "../utils/constants";
 import Modal from "./Modal";
 import TaskCardButton from "./TaskCardButton";
 
-const TaskCard = ({ task, setTaskData }) => {
+const TaskCard = ({ task }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {
@@ -29,7 +29,7 @@ const TaskCard = ({ task, setTaskData }) => {
         <p>Complete until: {task.complete_until_date.toLocaleDateString()}</p>
       </Modal>
       <div className="buttons">
-        <TaskCardButton type={"complete"}>Complete</TaskCardButton>
+        <TaskCardButton type={"complete"} onClick={markAsDone(task.complete_until_date)}>Complete</TaskCardButton>
         <TaskCardButton type={"delete"}>Delete</TaskCardButton>
       </div>
     </div>
