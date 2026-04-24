@@ -7,20 +7,7 @@ import { useState } from "react";
 
 function App() {
   const [taskData, setTaskData] = useState([]);
-  console.log();
-
-  //przejdź po wszystkich zadaniach i zmień jedno konkretne
-  // prevItems.map(item =>
-  //       item.id === id ? { ...item, [field]: value } : item
-  //     )
-
-const markAsDone = (task.complete_until_date) => {
-  setTaskData
-prevItems.map(task =>
-        task.complete_until_date === id ? { ...task, completed: true } : task
-      )
-    }
-
+  console.log(taskData);
 
   return (
     <>
@@ -28,7 +15,7 @@ prevItems.map(task =>
         <h1>Task Manager</h1>
       </header>
       <TaskForm setTaskData={setTaskData} />
-      <TaskList tasksList={taskData} />
+      <TaskList tasksList={taskData} setTaskData ={setTaskData}/>
       <ToastContainer transition={Flip} />
     </>
   );

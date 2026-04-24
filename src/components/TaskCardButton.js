@@ -2,19 +2,21 @@ const TaskCardButton = ({ type, children, onClick }) => {
   return (
     <>
       {type === "complete" ? (
-        <button className="btn btn-green">
+        <button className="btn btn-green" onClick={onClick}>
           <ion-icon name="checkmark-outline"></ion-icon>
           {children}
         </button>
       ) : null}
       {type === "delete" ? (
-        <button className="btn btn-red">
+        <button className="btn btn-red" onClick={onClick}>
           <ion-icon name="trash-outline"></ion-icon>
           {children}
         </button>
       ) : null}
       {type === "taskDetails" ? (
-        <button className="btn btn-full" onClick={onClick}>{children}</button>
+        <button className="btn btn-full" onClick={onClick}>
+          {children}
+        </button>
       ) : null}
     </>
   );

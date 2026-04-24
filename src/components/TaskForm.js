@@ -3,10 +3,9 @@ import TaskCardButton from "./TaskCardButton";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FiCalendar } from "react-icons/fi";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import "../assets/css/taskform.css";
-
 
 
 // ---------TEST---------
