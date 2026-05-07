@@ -10,6 +10,10 @@ function App() {
   //   taskItem.completed ? { ...taskItem, test: 'hello' } : taskItem,
   // );
   // console.log(filteredTasks);
+
+  const todos = taskData.filter((task) => !task.completed);
+  const completed = taskData.filter((task) => task.completed);
+
   return (
     <>
       <header>
@@ -17,7 +21,14 @@ function App() {
       </header>
 
       <TaskForm setTaskData={setTaskData} />
-      <TaskList tasksList={TaskData} setTaskData={setTaskData} />
+      <div className="task-lists-container">
+        <TaskList title="Todos" tasksList={todos} setTaskData={setTaskData} />
+        <TaskList
+          title="Completed"
+          tasksList={completed}
+          setTaskData={setTaskData}
+        />
+      </div>
     </>
   );
 }

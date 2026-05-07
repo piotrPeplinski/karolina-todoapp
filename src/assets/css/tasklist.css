@@ -1,6 +1,11 @@
+.task-lists-container {
+  display: flex;
+  align-items: flex-start;
+}
+
 .task-list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin: 5rem auto;
   max-width: 150rem;
