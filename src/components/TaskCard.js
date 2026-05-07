@@ -10,6 +10,7 @@ const TaskCard = ({ task, setTaskData }) => {
     setIsModalOpen(true);
   };
 
+  //oznaczenie zadania jako completed
   const handleComplete = () => {
     setTaskData((prevTasks) =>
       prevTasks.map((taskItem) =>
@@ -19,10 +20,6 @@ const TaskCard = ({ task, setTaskData }) => {
       ),
     );
   };
-
-  // prevItems.map(item =>
-  //     item.id === id ? { ...item, [field]: value } : item
-  //   )
 
   const priorityClass = priorities[task.priority].toLowerCase();
 
