@@ -13,13 +13,17 @@ const TaskCard = ({ task, setTaskData }) => {
 
   const handleComplete = () => {
     setTaskData(
-      (prevTasks) => //[{ title: "Hello" }],
-      prevTasks.map(taskItem =>
-        taskItem.created_date === task.created_date ? {
-          ...taskItem,
-          completed: true
-        } : taskItem
-      )
+      (
+        prevTasks, //[{ title: "Hello" }],
+      ) =>
+        prevTasks.map((taskItem) =>
+          taskItem.created_date === task.created_date
+            ? {
+                ...taskItem,
+                completed: true,
+              }
+            : taskItem,
+        ),
     );
   };
 
@@ -41,9 +45,11 @@ const TaskCard = ({ task, setTaskData }) => {
         <p>Complete until: {task.complete_until_date.toLocaleDateString()}</p>
       </Modal>
       <div className="buttons">
-        <TaskCardButton type={"complete"} onClick={handleComplete}>
-          Complete
-        </TaskCardButton>
+        {!task.completed && (
+          <TaskCardButton type={"complete"} onClick={handleComplete}>
+            Complete
+          </TaskCardButton>
+        )}
         <TaskCardButton type={"delete"}>Delete</TaskCardButton>
       </div>
     </div>
