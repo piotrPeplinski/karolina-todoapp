@@ -88,7 +88,7 @@ const TaskForm = ({ setTaskData }) => {
         value={formData.title}
         /*React renderuje i value=nowy formData.title*/
         onChange={(event) => {
-          console.log(event.target.value);
+         
           setFormData((prev) => ({
             ...prev,
             // desc: prev.desc,

@@ -1,15 +1,22 @@
 import TaskList from "./components/TaskList";
 import "./assets/css/tasklist.css";
 import TaskForm from "./components/TaskForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { taskData } from "./utils/mockTasks";
+import axios from "axios";
 
 function App() {
   const [TaskData, setTaskData] = useState([]);
-  // const filteredTasks = taskData.map((taskItem) =>
-  //   taskItem.completed ? { ...taskItem, test: 'hello' } : taskItem,
-  // );
-  // console.log(filteredTasks);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/todos",
+      );
+      console.log(response);
+    };
+    fetchTasks();
+  }, []);
 
   const todos = taskData.filter((task) => !task.completed);
   const completed = taskData.filter((task) => task.completed);
