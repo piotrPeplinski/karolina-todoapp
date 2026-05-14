@@ -1,9 +1,10 @@
 import TaskCard from "./TaskCard";
 
-const TaskList = ({ tasksList, setTaskData}) => {
+const TaskList = ({ title, tasksList, setTaskData }) => {
   return (
     <div className="task-list">
-      {tasksList.map((task,index) => (
+      <h2>{title}</h2>
+      {tasksList.map((task, index) => (
         <TaskCard task={task} key={index} setTaskData={setTaskData} />
       ))}
     </div>

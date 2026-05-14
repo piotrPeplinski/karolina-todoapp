@@ -1,22 +1,72 @@
-.task-list {
+.content-container {
+  border: 1px solid #0e172c;
+  padding: 2rem;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 5rem auto;
-  max-width: 150rem;
+}
+
+.task-lists-container {
+  margin: 3rem 3rem 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(145deg, #0f172a, #111c44);
+  border: 1px solid #172130;
+  width: 100%;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-lists-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 4rem;
+}
+.task-lists-container h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-bottom: 1px solid #1e293b;
+  width: 100%;
+  padding-bottom: 2rem;
+  padding-left: 4rem;
+}
+
+.tasks-container-row {
+  display: flex;
+  width: 100%;
+  gap: 3rem;
+}
+
+.task-lists-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.task-list {
+  flex: 1;
+  width: 50%;
+  margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .task-card {
-  background-color: #111827;
+  background: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.95),
+    rgba(11, 19, 43, 0.92)
+  );
   border-radius: 1.8rem;
-  border: 1px solid #1f2937;
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  backdrop-filter: blur(12px);
   padding: 2rem;
-  width: 45rem;
+  width: 40rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
   position: relative;
   border-left: 4px solid #31456f;
+  margin: 1rem;
 }
 
 .task-card-low {
@@ -54,36 +104,57 @@
   font-weight: 700;
   font-style: normal;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-.btn-full {
+.btn ion-icon {
+  font-size: 1.6rem;
+}
+
+.btn-add-task {
+  height: 5rem !important;
+  font-size: 1.7rem;
+  font-weight: 600;
   background: #5d6261;
   color: white;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border: none;
+}
+.btn-full {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  backdrop-filter: blur(10px);
 }
 
 .btn-full:hover {
-  border: 1px solid #d1c4c4;
-  transition: all 0.6s;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: white;
 }
 
 .buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .btn-green {
   width: 18rem;
-  background-color: #3d835dab;
+  background-color: #3d835d76;
   color: #2bcd74ab;
-  border: 1px solid #2bcd74ab;
+  border: 1px solid #2bcd7432;
 }
 
 .btn-red {
   width: 18rem;
-  background-color: #b3414189;
+  background-color: #b341414a;
   color: #ef1f1f;
-  border: 1px solid #f02b2b;
+  border: 1px solid #f02b2b4c;
 }
 
 /* ---------------MODAL------------------- */
