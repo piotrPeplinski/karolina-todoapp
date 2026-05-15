@@ -2,6 +2,7 @@ import TaskList from "./components/TaskList";
 import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./assets/css/tasklist.css";
+import "./assets/css/app.css";
 import TaskForm from "./components/TaskForm";
 import { useState } from "react";
 

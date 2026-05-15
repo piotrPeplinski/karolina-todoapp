@@ -1,0 +1,43 @@
+header h1 {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  padding: 2rem 0 2rem 5rem;
+}
+
+.content-container {
+  border: 1px solid #0e172c;
+  padding: 2rem;
+  display: flex;
+ }
+
+.task-lists-container {
+  margin: 3rem 3rem 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(145deg, #0f172a, #111c44);
+  border: 1px solid #172130;
+  width: 100%;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 65rem;
+  }
+
+.task-lists-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 4rem;
+}
+.task-lists-container h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-bottom: 1px solid #1e293b;
+  width: 100%;
+  padding-bottom: 2rem;
+  padding-left: 4rem;
+}
+
+.tasks-container-row {
+  display: flex;
+  width: 100%;
+  gap: 3rem;
+}
