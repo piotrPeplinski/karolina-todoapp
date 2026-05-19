@@ -4,9 +4,11 @@ const TaskList = ({ title, tasksList, setTaskData }) => {
   return (
     <div className="task-list">
       <h2>{title}</h2>
-      {tasksList.map((task, index) => (
-        <TaskCard task={task} key={index} setTaskData={setTaskData} />
-      ))}
+      <div className="tasklist-cards-row">
+        {tasksList.map((task, index) => (
+          <TaskCard task={task} key={index} setTaskData={setTaskData} />
+        ))}
+      </div>
     </div>
   );
 };

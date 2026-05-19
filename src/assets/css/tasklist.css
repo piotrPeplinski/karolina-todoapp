@@ -1,40 +1,47 @@
 .task-list {
-  flex: 1;
-  width: 50%;
-  margin: 5rem 0;
+  flex: 0 0 calc(50% - 2rem);
+  margin: 3rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.task-list h2 {
+  padding: 0 !important;
+}
+
+.tasklist-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+}
+
 .task-card {
-   background: linear-gradient(
-    145deg,
-    #0f172a,
-    #0b132b
-  );
+  background: linear-gradient(145deg, #0f172a, #0b132b);
   border-radius: 1.8rem;
   border: 1px solid rgba(148, 163, 184, 0.08);
   padding: 2rem;
-  width: 40rem;
+  flex: 0 0 calc(50% - 0.5rem);
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
   position: relative;
   border-left: 4px solid #31456f;
-  margin: 1rem;
+  margin-top: 1rem;
 }
 
 .task-card-low {
-  border-left: 6px solid #2b58b1f5;
+  border-left: 0.6rem solid #2b58b1f5;
 }
 
 .task-card-medium {
-  border-left: 6px solid #845f10f3;
+  border-left: 0.6rem solid #845f10f3;
 }
 
 .task-card-high {
-  border-left: 6px solid #aa54e050;
+  border-left: 0.6rem solid #aa54e050;
 }
 
 .task-card:hover {
@@ -52,10 +59,12 @@
 /* ---------------BUTTONS------------------- */
 
 .btn {
-  padding: 0.8rem 1.4rem;
+  height: 3.2rem;
+  min-width: 7rem;
+  width: 100%;
   border: 1px solid grey;
   border-radius: 0.8rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -63,7 +72,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.5rem;
+  
 }
 
 .btn ion-icon {
@@ -100,14 +110,14 @@
 }
 
 .btn-green {
-  width: 18rem;
+  max-width: 15rem;
   background-color: #3d835d76;
   color: #2bcd74ab;
   border: 1px solid #2bcd7432;
 }
 
 .btn-red {
-  width: 18rem;
+  max-width: 15rem;
   background-color: #b341414a;
   color: #ef1f1f;
   border: 1px solid #f02b2b4c;
@@ -156,7 +166,7 @@
 
 .modal-title {
   align-self: center;
-  }
+}
 
 .modal-content {
   font-size: 2.5rem;

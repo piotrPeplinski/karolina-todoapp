@@ -3,6 +3,8 @@ import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./assets/css/tasklist.css";
 import "./assets/css/app.css";
+import "./assets/css/taskform.css";
+import "./assets/css/queries.css";
 import TaskForm from "./components/TaskForm";
 import { useState } from "react";
 

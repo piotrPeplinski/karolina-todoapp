@@ -21,32 +21,48 @@ const TaskCard = ({ task, setTaskData }) => {
     );
   };
 
+  //kasowanie zadania
+  const handleDelete = () => {
+    setTaskData((prevTasks) =>
+      prevTasks.map((taskItem) =>
+        taskItem.created_date === task.created_date
+          ? { ...taskItem, deleted: true }
+          : taskItem,
+      ),
+    );
+  };
+
   const priorityClass = priorities[task.priority].toLowerCase();
 
   return (
-    <div className={`task-card task-card-${priorityClass}`}>
-      <p className={`priority priority-${priorityClass}`}>
-        {priorities[task.priority]}
-      </p>
-      <h3 className="task-title"> {task.title}</h3>
+    <>
+      <div className={`task-card task-card-${priorityClass}`}>
+        <p className={`priority priority-${priorityClass}`}>
+          {priorities[task.priority]}
+        </p>
+        <h3 className="task-title"> {task.title}</h3>
 
-      <TaskCardButton type={"taskDetails"} onClick={handleClick}>
-        Task details
-      </TaskCardButton>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h3 className="modal-title">Task details</h3>
-        <p>Description: {task.desc || "No description"}</p>
-        <p>Completed: {task.completed ? "Yes" : "No"}</p>
-        <p>Created: {task.created_date.toLocaleDateString()}</p>
-        <p>Complete until: {task.complete_until_date.toLocaleDateString()}</p>
-      </Modal>
-      <div className="buttons">
-        <TaskCardButton type={"complete"} onClick={handleComplete}>
-          Complete
+        <TaskCardButton type={"taskDetails"} onClick={handleClick}>
+          Task details
         </TaskCardButton>
-        <TaskCardButton type={"delete"}>Delete</TaskCardButton>
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <h3 className="modal-title">Task details</h3>
+          <p>Description: {task.desc || "No description"}</p>
+          <p>Completed: {task.completed ? "Yes" : "No"}</p>
+          <p>Created: {task.created_date.toLocaleDateString()}</p>
+          <p>Complete until: {task.complete_until_date.toLocaleDateString()}</p>
+        </Modal>
+        <div className="buttons">
+          <TaskCardButton type={"complete"} onClick={handleComplete}>
+            Complete
+          </TaskCardButton>
+          <TaskCardButton type={"delete"} onClick={handleDelete}>
+            Delete
+          </TaskCardButton>
+        </div>
       </div>
-    </div>
+     
+    </>
   );
 };
 
