@@ -12,8 +12,8 @@ function App() {
   const [taskData, setTaskData] = useState([]);
   console.log(taskData);
 
-  const todos = taskData.filter((task) => !task.completed);
-  const completed = taskData.filter((task) => task.completed);
+  const todos = taskData.filter((task) => !task.completed && !task.deleted);
+  const completed = taskData.filter((task) => task.completed && !task.deleted);
 
   return (
     <>
@@ -24,16 +24,18 @@ function App() {
         <TaskForm setTaskData={setTaskData} />
         <div className="task-lists-container">
           <h2>YOUR TASKS</h2>
-          <h3>Manage and organize your tasks efficently</h3>
+          <h3>Manage and organize your tasks efficiently</h3>
           <div className="tasks-container-row">
             <TaskList
               title="Todos"
+              titleAlternative="You don't have any todos"
               tasksList={todos}
               setTaskData={setTaskData}
             />
 
             <TaskList
               title="Completed"
+              titleAlternative="You don't have any completed tasks"
               tasksList={completed}
               setTaskData={setTaskData}
             />
