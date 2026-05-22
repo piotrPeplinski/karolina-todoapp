@@ -42,7 +42,12 @@ function App() {
           </div>
         </div>
       </div>
-      <ToastContainer transition={Flip} />
+      <ToastContainer
+        toastStyle={{
+          minHeight: "40px",
+        }}
+        transition={Flip}
+      />
     </>
   );
 }

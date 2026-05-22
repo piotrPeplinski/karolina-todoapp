@@ -82,7 +82,7 @@
 
 .btn-add-task {
   height: 5rem !important;
-  font-size: 1.7rem;
+  font-size: 1.7rem !important;
   font-weight: 600;
   background: #5d6261;
   color: white;
