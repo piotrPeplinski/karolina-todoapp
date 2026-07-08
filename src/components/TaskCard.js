@@ -2,8 +2,10 @@ import { useState } from "react";
 import { priorities } from "../utils/constants";
 import Modal from "./Modal";
 import TaskCardButton from "./TaskCardButton";
+import { useTaskContext } from "../context/taskContext";
 
-const TaskCard = ({ task, setTaskData }) => {
+const TaskCard = ({ task }) => {
+  const { setTaskData } = useTaskContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {

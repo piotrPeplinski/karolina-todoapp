@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FiCalendar } from "react-icons/fi";
 import "../assets/css/taskform.css";
+import { useTaskContext } from "../context/taskContext";
 
 // ---------TEST---------
 // const TaskForm = () => {
@@ -27,7 +28,8 @@ import "../assets/css/taskform.css";
 //   );
 // };
 
-const TaskForm = ({ setTaskData }) => {
+const TaskForm = () => {
+  const { setTaskData } = useTaskContext();
   //odbiera funkcje setTaskData z App.js
   const [formData, setFormData] = useState({
     title: "",
@@ -42,7 +44,6 @@ const TaskForm = ({ setTaskData }) => {
     e.preventDefault(); //blokowanie domyślnej operacji - dla formularza odswiezenie strony
     //z.d.2 walidacja formularza
     if (formData.title === "") {
-      
       return;
     }
     if (formData.priority === 0) {
@@ -142,10 +143,12 @@ const TaskForm = ({ setTaskData }) => {
       <div className="date-input-wrapper">
         <DatePicker
           className="form-date common-style"
-          selected={formData.complete_until_date}  // selected tylko wyświetla datę w polu DatePickera
-          onChange={(date) =>   //date to data wybrana przez użytkownika
+          selected={formData.complete_until_date} // selected tylko wyświetla datę w polu DatePickera
+          onChange={(
+            date, //date to data wybrana przez użytkownika
+          ) =>
             setFormData((prev) => ({
-              ...prev,             //zachowaj wszystko inne np.title,desc i dodaj date
+              ...prev, //zachowaj wszystko inne np.title,desc i dodaj date
               complete_until_date: date,
             }))
           }
