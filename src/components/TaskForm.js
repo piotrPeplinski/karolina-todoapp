@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import TaskCardButton from "./TaskCardButton";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -29,6 +29,7 @@ import { useTaskContext } from "../context/taskContext";
 // };
 
 const TaskForm = () => {
+  const inputRef = useRef(null);
   const { setTaskData } = useTaskContext();
   //odbiera funkcje setTaskData z App.js
   const [formData, setFormData] = useState({
@@ -72,6 +73,12 @@ const TaskForm = () => {
       complete_until_date: null,
     });
   };
+  useEffect(() => {
+    console.log(inputRef.current);
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
 
   return (
     <form className="task-form">
