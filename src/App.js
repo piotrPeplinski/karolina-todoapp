@@ -12,7 +12,7 @@ function App() {
   //   taskItem.completed ? { ...taskItem, test: 'hello' } : taskItem,
   // );
   // console.log(filteredTasks);
-
+  console.log(process.env.REACT_APP_SERVICE_ID);
   const todos = taskData.filter((task) => !task.completed);
   const completed = taskData.filter((task) => task.completed);
 
