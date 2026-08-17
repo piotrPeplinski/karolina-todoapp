@@ -1,11 +1,13 @@
 import TaskList from "./components/TaskList";
 import "./assets/css/tasklist.css";
 import TaskForm from "./components/TaskForm";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useTaskContext } from "./context/taskContext";
 import Counter from "./components/Counter";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const { t, i18n } = useTranslation();
   const buttonRef = useRef(null);
   const { taskData } = useTaskContext();
   // const filteredTasks = taskData.map((taskItem) =>
@@ -26,8 +28,9 @@ function App() {
   return (
     <>
       <header>
-        <h1>Task Manager</h1>
+        <h1>{t("header_text")}</h1>
       </header>
+      <button onClick={() => i18n.changeLanguage("en")}>Angielski</button>
       <Counter />
       <TaskForm />
       <div className="task-lists-container">
