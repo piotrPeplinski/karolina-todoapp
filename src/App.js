@@ -7,7 +7,7 @@ import Counter from "./components/Counter";
 import { useTranslation } from "react-i18next";
 
 function App() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["home", "form"]);
   const buttonRef = useRef(null);
   const { taskData } = useTaskContext();
   // const filteredTasks = taskData.map((taskItem) =>
@@ -28,9 +28,10 @@ function App() {
   return (
     <>
       <header>
-        <h1>{t("header_text")}</h1>
+        <h1>{t("header_text", { ns: "home" })}</h1>
       </header>
       <button onClick={() => i18n.changeLanguage("en")}>Angielski</button>
+      <button onClick={() => i18n.changeLanguage("pl")}>Polski</button>
       <Counter />
       <TaskForm />
       <div className="task-lists-container">
